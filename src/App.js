@@ -32,7 +32,7 @@ function App() {
       
     <div className="content">
 
-      <div className="titulo_pagina">
+      <div className="titulo_pagina_content">
 
         <h1>Administracion de Pacientes</h1>
 
