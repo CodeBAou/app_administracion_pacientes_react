@@ -1,10 +1,10 @@
 import React,{useState} from 'react';
 
 
+const Formulario = ({saveCita}) => {
 
-const Formulario = ({SetCita}) => {
-
-    const [cita,setCita]=useState({
+    const [cita,setCita]=useState(
+    {
        id:'',
        dni:'',
        nombre:'',
@@ -14,15 +14,26 @@ const Formulario = ({SetCita}) => {
        sintomas:''
     });
 
-    const ChangeCitaData = e => {
+    const ChangeCitaData = e => 
+    {
+
         setCita(
             {...cita,[e.target.name]:e.target.value}
         );
+
+    }
+
+    const SubmitCita = e => {
+
+        e.preventDefault();
+
+
+        saveCita(cita);
     }
 
     return (
 
-        <form>
+        <form onSubmit={SubmitCita}>
             <h2>Añadir Cita</h2>
             <label>DNI</label><br/>
             <input name="dni" type="text" pattern="[0-9]{8}[A-Z]{1}" onChange={ChangeCitaData} required/><br/>

@@ -7,7 +7,7 @@ function App() {
 
     //Pages = añadir/ver
     const [page,SetPage]=useState('añadir');
-    const [citas,SetCita]=useState([]);
+    const [citas,SetCitas]=useState([]);
 
     const MobilePageAñadir = () => {
 
@@ -28,9 +28,9 @@ function App() {
       }
     }
 
-    const SaveCita= (e) => {
-      e.preventDefault();
-
+    const SaveCita= (cita) => {
+      //Falta agregar id aqui
+      SetCitas([...citas,cita]);
     }
 
   return (
@@ -48,11 +48,11 @@ function App() {
 
       </div>
 
-      <div id="BodyCa" className="body_Carre" onSubmit={SaveCita}>
+      <div id="BodyCa" className="body_Carre">
 
           <div id="Page_Añadir" className="Header_Api_Pacientes ">
             <Formulario
-              SetCita={SetCita}
+              saveCita={SaveCita}
             />  
           </div>
 
