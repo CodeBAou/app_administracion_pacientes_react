@@ -1,0 +1,88 @@
+.tarjeta_cita_content{
+
+    min-width:370px;
+    min-height:120px;
+    width:80%;    
+    margin:0px auto;
+    background:rgba(0, 37, 36,0.7);
+    display:grid;
+    background:gray;
+    grid-template-rows:auto auto auto auto;
+    grid-template-columns:60% 40%;
+    grid-template-areas:
+        'header header'
+        'dataName dataName'
+        'dataDNI dataProvincia'
+        'dataSintomas dataSintomas';
+
+    margin-top:0.5em;
+    margin-bottom:1em;
+    box-shadow: 0.3em 0.3em 0.5em black;
+    border-radius:22px;
+}
+
+.tarjeta_cita_header{
+
+    border-top-left-radius:22px;
+    border-top-right-radius:22px;
+    grid-area:header;
+    background:rgba(0, 37, 36,0.9);
+    margin:0px;
+    text-align:left;
+    font-size:1.2em;
+    color:white;
+    
+} 
+
+
+.name_content{
+
+    grid-area:dataName;
+    text-align:left;
+    font-size:1em;
+    color:white;
+    border:0.1em solid rgba(0, 37, 36,0.9);
+}
+
+.dni_data_content{
+    
+    grid-area:dataDNI;
+    text-align:center;
+    font-size:1em;
+    color:rgb(0, 37, 36);
+    background:white;
+    border-left:0.1em solid rgba(0, 37, 36,0.9);
+}
+
+.provincia_data_content{
+
+    grid-area:dataProvincia;
+    text-align: center;
+    font-size:1em;
+    color:rgb(0, 37, 36);
+    background:white;
+    border-right:0.1em solid rgba(0, 37, 36,0.9);
+}
+
+.sintomas_content{
+
+    grid-area:dataSintomas;
+    text-align:left;
+    font-size:1em;
+    color:white;
+    overflow-wrap: break-word;
+    border:0.1em solid rgba(0, 37, 36,0.9);
+    border-bottom-left-radius:22px;
+    border-bottom-right-radius:22px;
+}
+
+.data{
+    
+    width:100%;
+    padding:0.3em;
+    margin-left:0.4em;
+}
+
+
+
+   
