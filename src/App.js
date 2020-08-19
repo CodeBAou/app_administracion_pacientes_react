@@ -1,11 +1,13 @@
 import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 import './assets/css/App.css';
+import Formulario from './components/Formulario';
 
 function App() {
 
     //Pages = añadir/ver
     const [page,SetPage]=useState('añadir');
+    const [citas,SetCita]=useState([]);
 
     const MobilePageAñadir = () => {
 
@@ -26,7 +28,10 @@ function App() {
       }
     }
 
- 
+    const SaveCita= (e) => {
+      e.preventDefault();
+
+    }
 
   return (
       
@@ -43,14 +48,18 @@ function App() {
 
       </div>
 
-      <div id="BodyCa" className="body_Carre">
-          <div id="Page_Añadir" className="Header_Api_Pacientes ">
+      <div id="BodyCa" className="body_Carre" onSubmit={SaveCita}>
 
+          <div id="Page_Añadir" className="Header_Api_Pacientes ">
+            <Formulario
+              SetCita={SetCita}
+            />  
           </div>
 
           <div id="Page_Ver" className="Api_Pacientes_content ">
 
           </div>
+
       </div>
 
     </div>

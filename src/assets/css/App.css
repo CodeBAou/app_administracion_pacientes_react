@@ -21,9 +21,8 @@
 
   width:100%;
   height:100vh;
-  background-image:url('../img/fondo.png');
   background-size: cover;
-
+  background-image:url('../img/fondo.png');
 }
 
 
@@ -34,15 +33,16 @@
   overflow:hidden;
  
 }
+
 .titulo_pagina_content{
 
-  position:absolute;
   top:0px;
   left:0px;
   width:100%;
   height:10vh;
-  background:rgb(0, 29, 0);
+  position:absolute;
   text-align:center;
+  background:rgb(0, 29, 0);
   box-shadow:20px 90vh 20vh white;
   text-shadow: 5px 8px 3px black;
 }
@@ -66,8 +66,16 @@
 h1{
 
   width:100%;
-  color:white;
   font-size:3em;
+  color:white;
+  margin-top:0px;
+}
+
+h2{
+
+  width:100%;
+  font-size:2em;
+  color:white;
   margin-top:0px;
 }
 
@@ -77,6 +85,51 @@ h1{
   height:100vh;
 }
 
+form{
+
+  width:60%;
+  height:80vh;
+  margin:0 auto;
+  margin-top:3%;
+  text-align:center;
+  background: rgba(5, 5, 5, 0.2);
+  align-content: center;
+  box-shadow:8px 6px 24px black;
+}
+
+input{
+
+  width:90%;
+  height:4%;
+  border-radius:25px;
+  color:white;
+  background: rgba(7, 35, 1, 0.4);
+}
+
+label{
+  color:white;
+  font-size:1em;
+}
+
+textarea{
+
+  width:90%;
+  height:20vh;
+  border:none;
+  background: rgba(7, 35, 1, 0.6);
+  resize: none;
+  color:white;
+}
+
+.SubmitBTN{
+
+  width:95%;
+  height:5vh;
+  font-size:1em;
+  margin-top:2%;
+  margin-bottom:2%;
+  color:rgb(0,27,8);
+}
 
 @media(min-width:770px){
 
@@ -87,17 +140,23 @@ h1{
   }
 
   .Api_Pacientes_content{
-
-    margin-left:0%;
+ 
     float:left;
+    margin-left:0%;
   }
 
   .MenuMobile{
 
     display:none;
   }
+
 }
 
+@media(max-width:1000px){
+  form{
+    width:90%;
+  }
+}
 @media(max-width:769px){
 
   .App{
@@ -114,47 +173,59 @@ h1{
 
   h1{
 
-    width:100%;
-    color:white;
-    font-size:1.4em;
+    width:100%;  
     float:left;
     margin:2px;
+    color:white;
+    font-size:1.4em;
+  }
+
+  h2{
+    margin-bottom:1vh;
   }
 
   .MenuMobile{
     
     height:5vh;
     width:100%;
-    display:hidden;
     float:left;
+    display:hidden;
   }
 
   .btnMenuMobile{
 
     width:50%;
     height:100%;
+    background:none;
+    color:white;
+    border:0.05vh solid white;
   }
-
 
   .Header_Api_Pacientes{
 
-    height:100vh;
     width:50%;
     float:left;
     margin:0px;
+    height:100vh;
+
   }
 
   .Api_Pacientes_content{
 
-    height:100vh;
     width:50%;
     float:left;
     margin:0px;
+    height:100vh;
   }
 
   .body_Carre{
 
-      width:200%;
+    width:200%;
+  }
+
+  form{
+    width:96%;
+    margin-left:0.8%;
   }
 
 }
