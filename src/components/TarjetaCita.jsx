@@ -4,13 +4,16 @@ import '../assets/css/TarjetaCita.css';
 const TarjetaCita= ({cita,EliminarCita}) => {
     
     const Eliminar = () => {
+
         EliminarCita(cita.id);
     }
 
     return (
 
         <div className="tarjeta_cita_content">
+
             <div className="Datos_Personales_content">
+
                 <div className="tarjeta_cita_header">
                     <span className="data">{cita.data}</span>
                     <span className="data">{cita.hora}</span> 
@@ -28,6 +31,7 @@ const TarjetaCita= ({cita,EliminarCita}) => {
                 <div className="provincia_data_content">
                     <span className="data_name"><strong>Provincias:</strong></span> <span className="data">{cita.provincia}</span> 
                 </div>
+                
             </div>
             
             <div className="sintomas_content">

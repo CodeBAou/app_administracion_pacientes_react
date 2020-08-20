@@ -3,44 +3,48 @@ import PropTypes from 'prop-types';
 import './assets/css/App.css';
 import Formulario from './components/Formulario';
 import TarjetaCita from './components/TarjetaCita';
-import PropTypes from 'prop-types';
 
 function App() {
 
-    //Pages = añadir/ver
-    const [page,SetPage]=useState('añadir');
+  //Pages = añadir/ver
+  const [page,SetPage]=useState('añadir');
 
-    const [citas,SetCitas]=useState([]);
+  const [citas,SetCitas]=useState([]);
 
-    const MobilePageAñadir = () => {
+  const MobilePageAñadir = () => {
 
-      if(page == 'ver'){
-
-        SetPage('añadir');
-        document.getElementById('BodyCa').style.animation = "DesplazamientoBodyMobile_Right 1s forwards";
-      }
+    if(page == 'ver')
+    {
+      SetPage('añadir');
+      document.getElementById('BodyCa').style.animation = "DesplazamientoBodyMobile_Right 1s forwards";
     }
 
-    const MobilePageVer = () => {
+  }
 
-      if(page == 'añadir'){
+  const MobilePageVer = () => {
 
-        SetPage('ver');
-        document.getElementById('BodyCa').style.animation = "DesplazamientoBodyMobile_Left 1s forwards";
-      }
+    if(page == 'añadir')
+    {
+      SetPage('ver');
+      document.getElementById('BodyCa').style.animation = "DesplazamientoBodyMobile_Left 1s forwards";
     }
 
-    const SaveCita= (cita) => {
-      //Falta agregar id aqui
-      SetCitas([...citas,cita]);
-    }
+  }
 
-    const EliminarCita = (id) => {
+  const SaveCita= (cita) => {
+    //Falta agregar id aqui
+    SetCitas(
+      [...citas,cita])
+    ;
 
-      console.log('Eliminar cita -> '+id);
-      let citadasFiltradas=citas.filter(cita => cita.id != id);
-      SetCitas(citadasFiltradas);
-    }
+  }
+
+  const EliminarCita = (id) => {
+    
+    let citadasFiltradas=citas.filter(cita => cita.id != id);
+    SetCitas(citadasFiltradas);
+  }
+
 
   return (
       
@@ -60,9 +64,11 @@ function App() {
       <div id="BodyCa" className="body_Carre">
 
           <div id="Page_Añadir" className="Header_Api_Pacientes ">
+
             <Formulario
               saveCita={SaveCita}
             />  
+
           </div>
 
           <div id="Page_Ver" className="Api_Pacientes_content ">
@@ -91,13 +97,15 @@ function App() {
   );
 }
 
-Formulario.propTypes={
-  saveCita:PropTypes.func.isRequired
-}
+Formulario.propTypes=
+  {
+    saveCita:PropTypes.func.isRequired
+  }
 
-TarjetaCita.propTypes={
-  cita:PropTypes.object.isRequired,
-  EliminarCita:PropTypes.func.isRequired
-}
+TarjetaCita.propTypes=
+  {
+    cita:PropTypes.object.isRequired,
+    EliminarCita:PropTypes.func.isRequired
+  }
 
 export default App;
