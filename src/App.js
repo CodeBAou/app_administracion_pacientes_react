@@ -9,17 +9,7 @@ function App() {
     //Pages = añadir/ver
     const [page,SetPage]=useState('añadir');
 
-    const [citas,SetCitas]=useState([
-      {
-        id:1,
-        dni:'44663397L',
-        nombre:'Boris Alvarez',
-        provincia:'Ourense',
-        data:'05/08/2020',
-        hora:'20:45',
-        sintomas:'Dolor de cabeza y estomago'
-      }
-    ]);
+    const [citas,SetCitas]=useState([]);
 
     const MobilePageAñadir = () => {
 
@@ -69,11 +59,14 @@ function App() {
           </div>
 
           <div id="Page_Ver" className="Api_Pacientes_content ">
-              {
-                citas.map(cita => (
-                  <TarjetaCita cita={cita}/>
-                ) )
-              }
+            {
+              citas.length < 1 
+              ? <p className="Message">No Hay Citas</p>
+              : citas.map(cita => (
+                <TarjetaCita cita={cita}/>
+                ))
+            }
+              
           </div>
 
       </div>

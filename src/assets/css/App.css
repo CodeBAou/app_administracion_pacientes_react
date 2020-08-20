@@ -139,6 +139,17 @@ textarea{
   color:rgb(0,27,8);
 }
 
+.Message{
+
+    background: white;
+    font-size:1.2em;
+    text-align:center;
+    opacity:0.4;
+    width:80%;
+    margin:0 auto;
+    margin-top:20vh;
+}
+
 @media(min-width:770px){
 
   .Header_Api_Pacientes{
