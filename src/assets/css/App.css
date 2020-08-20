@@ -61,6 +61,9 @@
   height:90vh;
   padding-top:10vh;
   background:rgba(0, 27, 8,0.5);
+  overflow:scroll;
+  overflow-x: hidden;
+  scrollbar-color:dark;
 }
 
 h1{

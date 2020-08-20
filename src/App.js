@@ -2,12 +2,24 @@ import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 import './assets/css/App.css';
 import Formulario from './components/Formulario';
+import TarjetaCita from './components/TarjetaCita';
 
 function App() {
 
     //Pages = añadir/ver
     const [page,SetPage]=useState('añadir');
-    const [citas,SetCitas]=useState([]);
+
+    const [citas,SetCitas]=useState([
+      {
+        id:1,
+        dni:'44663397L',
+        nombre:'Boris Alvarez',
+        provincia:'Ourense',
+        data:'05/08/2020',
+        hora:'20:45',
+        sintomas:'Dolor de cabeza y estomago'
+      }
+    ]);
 
     const MobilePageAñadir = () => {
 
@@ -57,7 +69,11 @@ function App() {
           </div>
 
           <div id="Page_Ver" className="Api_Pacientes_content ">
-
+              {
+                citas.map(cita => (
+                  <TarjetaCita cita={cita}/>
+                ) )
+              }
           </div>
 
       </div>
