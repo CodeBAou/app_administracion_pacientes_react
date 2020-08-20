@@ -1,7 +1,10 @@
 import React,{useState} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
+const Formulario = ({saveCita}) => 
+{
 
-const Formulario = ({saveCita}) => {
+    const { v4: uuidv4 } = require('uuid');
 
     const [cita,setCita]=useState(
     {
@@ -12,26 +15,29 @@ const Formulario = ({saveCita}) => {
        data:'',
        hora:'',
        sintomas:''
-    });
+    }
+    );
 
     const ChangeCitaData = e => 
     {
-
         setCita(
-            {...cita,[e.target.name]:e.target.value}
+            {
+            ...cita,
+             [e.target.name]:e.target.value,
+             id:uuidv4()
+            }
         );
-
     }
 
-    const SubmitCita = e => {
-
-        e.preventDefault();
-
-
+    const SubmitCita = e => 
+    {
+        e.preventDefault(); 
+       
         saveCita(cita);
+
     }
 
-    return (
+    return(
 
         <form onSubmit={SubmitCita}>
             <h2>Añadir Cita</h2>
