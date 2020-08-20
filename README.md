@@ -2,6 +2,9 @@
 Gestion de citas con pacientes, un formulario para crear citas y un listado de las mismas. Se utilizan componentes y hooks para pasar funciones y objectos JSON a los componentes hijos. 
 Funciona sin backend, los objectos "citas" que se guarden se almacenan de forma local.
 
+### Requerimiento
+Es necesario tener node instalado https://nodejs.org/es/download/
+
 ### Iniciar proyecto [Terminal]
 ```
 git clone https://github.com/CodeBAou/app_administracion_pacientes_react.git
