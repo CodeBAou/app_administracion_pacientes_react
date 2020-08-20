@@ -1,8 +1,12 @@
 import React from 'react';
 import '../assets/css/TarjetaCita.css';
 
-const TarjetaCita= ({cita}) => {
+const TarjetaCita= ({cita,EliminarCita}) => {
     
+    const Eliminar = () => {
+        EliminarCita(cita.id);
+    }
+
     return (
 
         <div className="tarjeta_cita_content">
@@ -10,6 +14,7 @@ const TarjetaCita= ({cita}) => {
                 <div className="tarjeta_cita_header">
                     <span className="data">{cita.data}</span>
                     <span className="data">{cita.hora}</span> 
+                    <button className="btn_Eliminar_Cita" onClick={Eliminar}>Eliminar</button>
                 </div> 
 
                 <div className="name_content">

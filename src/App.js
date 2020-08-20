@@ -18,7 +18,6 @@ function App() {
         SetPage('añadir');
         document.getElementById('BodyCa').style.animation = "DesplazamientoBodyMobile_Right 1s forwards";
       }
-     
     }
 
     const MobilePageVer = () => {
@@ -33,6 +32,12 @@ function App() {
     const SaveCita= (cita) => {
       //Falta agregar id aqui
       SetCitas([...citas,cita]);
+    }
+
+    const EliminarCita = (id) => {
+      console.log('Eliminar cita -> '+id);
+      let citadasFiltradas=citas.filter(cita => cita.id != id);
+      SetCitas(citadasFiltradas);
     }
 
   return (
@@ -63,7 +68,11 @@ function App() {
               citas.length < 1 
               ? <p className="Message">No Hay Citas</p>
               : citas.map(cita => (
-                <TarjetaCita cita={cita}/>
+                <TarjetaCita
+                  key={cita.id} 
+                  cita={cita}
+                  EliminarCita={EliminarCita}
+                  />
                 ))
             }
               
