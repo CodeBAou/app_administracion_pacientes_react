@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './assets/css/App.css';
 import Formulario from './components/Formulario';
 import TarjetaCita from './components/TarjetaCita';
+import PropTypes from 'prop-types';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
     }
 
     const EliminarCita = (id) => {
+
       console.log('Eliminar cita -> '+id);
       let citadasFiltradas=citas.filter(cita => cita.id != id);
       SetCitas(citadasFiltradas);
@@ -66,13 +68,17 @@ function App() {
           <div id="Page_Ver" className="Api_Pacientes_content ">
             {
               citas.length < 1 
+
               ? <p className="Message">No Hay Citas</p>
+
               : citas.map(cita => (
+
                 <TarjetaCita
                   key={cita.id} 
                   cita={cita}
                   EliminarCita={EliminarCita}
-                  />
+                />
+
                 ))
             }
               
@@ -83,6 +89,15 @@ function App() {
     </div>
 
   );
+}
+
+Formulario.propTypes={
+  saveCita:PropTypes.func.isRequired
+}
+
+TarjetaCita.propTypes={
+  cita:PropTypes.object.isRequired,
+  EliminarCita:PropTypes.func.isRequired
 }
 
 export default App;
